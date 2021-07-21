@@ -115,7 +115,7 @@ class CarouselOptions {
   /// Whether or not to disable the `Center` widget for each slide.
   final bool disableCenter;
 
-  CarouselOptions({
+  const CarouselOptions({
     this.height,
     this.aspectRatio: 16 / 9,
     this.viewportFraction: 0.8,
