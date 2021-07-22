@@ -71,9 +71,7 @@ class CarouselSliderState extends State<CarouselSlider> with TickerProviderState
   /// mode is related to why the page is being changed
   CarouselPageChangedReason mode = CarouselPageChangedReason.controller;
 
-  CarouselSliderState(this.carouselController) {
-    this.carouselState = CarouselState(this.options, clearTimer, resumeTimer, this.changeMode);
-  }
+  CarouselSliderState(this.carouselController);
 
   void changeMode(CarouselPageChangedReason _mode) {
     mode = _mode;
@@ -101,6 +99,7 @@ class CarouselSliderState extends State<CarouselSlider> with TickerProviderState
   void initState() {
     super.initState();
 
+    this.carouselState = CarouselState(this.options, clearTimer, resumeTimer, this.changeMode);
     carouselState.itemCount = widget.itemCount;
     carouselController.state = carouselState;
     carouselState.initialPage = widget.options.initialPage;
